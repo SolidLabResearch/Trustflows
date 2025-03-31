@@ -1,4 +1,4 @@
-# Framework for ODRL Rule Compliance through Evaluation
+# Trustflows
 
 This is the [Bikeshed](https://github.com/speced/bikeshed/) specification repository for Trustflows.
 

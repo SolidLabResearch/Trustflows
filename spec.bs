@@ -53,6 +53,9 @@ Components {#components}
 
 ## Trust Envelope ## {#envelope}
 
+- **Sticky policies** represent restrictions on the use of data, which are directly attached to the corresponding data (Ines: https://www.sciencedirect.com/science/article/pii/S1574013724000819) -> need for standardization language for expressing it -> context associations Ruben D
+
+
 <mark>TODO:</mark> What do we mean with that
 
 
