@@ -2171,7 +2171,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://knows.idlab.ugent.be/"> <img alt="KNoWS" height="48" src="logo.png"> </a> </p>
    <h1 class="p-name no-ref" id="title">Trustflows</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Document, <time class="dt-updated" datetime="2025-03-31">31 March 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Document, <time class="dt-updated" datetime="2025-04-01">1 April 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Previous Versions:
@@ -2187,7 +2187,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 31 March 2025,
+In addition, as of 1 April 2025,
 the editors have made this specification available under the <a href="https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2195,7 +2195,7 @@ Parts of this work may be from another specification document.  If so, those par
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p><mark>TODO:</mark> one-liner trustflow</p>
+   <p>A Trustflow is a secure data flow that explicitly embeds trust using cryptographic methods, provenance, usage policies, etc., to ensure reliability and integrity. Unlike current web data flows, which, amongst others things, rely on implicit trust based on sender reputation or manual checks, Trustflows make trust verifiable and integral to the data itself.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -2238,18 +2238,34 @@ Parts of this work may be from another specification document.  If so, those par
    <h3 class="heading settled" data-level="1.1" id="terminology"><span class="secno">1.1. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h3>
    <dl>
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="trustflow">Trustflow</dfn>
-    <dd><mark>TODO:</mark>
+    <dd>A Trustflow is a secure data flow that explicitly embeds trust using cryptographic methods, provenance, usage policies, etc., to ensure reliability and integrity.
     <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="trust-envelope">Trust Envelope</dfn>
+    <dd><mark>TODO:</mark>
+    <dt><dfn class="dfn-paneled" data-dfn-type="dfn" data-noexport id="sticky-policy">Sticky Policy</dfn>
     <dd><mark>TODO:</mark>
    </dl>
    <h3 class="heading settled" data-level="1.2" id="requirements"><span class="secno">1.2. </span><span class="content">Requirements</span><a class="self-link" href="#requirements"></a></h3>
+   <ul>
+    <li data-md>
+     <p>Identity: The need to be able to trust the identity or claims of a party</p>
+    <li data-md>
+     <p>Usage Control: The need that only authorized parties can use the data for a well-defined purpose</p>
+    <li data-md>
+     <p>Data minimization:  The need to only disclose the minimal amount of data that other parties require for the processing</p>
+    <li data-md>
+     <p>Separation of concerns: <mark>TODO:</mark></p>
+    <li data-md>
+     <p>Data Integrity: <mark>TODO:</mark></p>
+    <li data-md>
+     <p>Interoperability: <mark>TODO:</mark></p>
+   </ul>
    <h2 class="heading settled" data-level="2" id="components"><span class="secno">2. </span><span class="content">Components</span><a class="self-link" href="#components"></a></h2>
    <h3 class="heading settled" data-level="2.1" id="envelope"><span class="secno">2.1. </span><span class="content">Trust Envelope</span><a class="self-link" href="#envelope"></a></h3>
    <ul>
     <li data-md>
      <p><strong>Sticky policies</strong> represent restrictions on the use of data, which are directly attached to the corresponding data (Ines: https://www.sciencedirect.com/science/article/pii/S1574013724000819) -> need for standardization language for expressing it -> context associations Ruben D</p>
    </ul>
-   <p><mark>TODO:</mark> What do we mean with that</p>
+   <p><mark>TODO:</mark> What do we mean with that; How does it differ from a sticky policy?</p>
    <p>Technologies envisioned:</p>
    <ul>
     <li data-md>
@@ -2448,6 +2464,7 @@ Parts of this work may be from another specification document.  If so, those par
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
+   <li><a href="#sticky-policy">Sticky Policy</a><span>, in § 1.1</span>
    <li><a href="#trust-envelope">Trust Envelope</a><span>, in § 1.1</span>
    <li><a href="#trustflow">Trustflow</a><span>, in § 1.1</span>
   </ul>
@@ -2662,6 +2679,7 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
+"sticky-policy": {"dfnID":"sticky-policy","dfnText":"Sticky Policy","external":false,"refSections":[],"url":"#sticky-policy"},
 "trust-envelope": {"dfnID":"trust-envelope","dfnText":"Trust Envelope","external":false,"refSections":[{"refs":[{"id":"ref-for-trust-envelope"}],"title":"1. Introd\u00aduction"}],"url":"#trust-envelope"},
 "trustflow": {"dfnID":"trustflow","dfnText":"Trustflow","external":false,"refSections":[{"refs":[{"id":"ref-for-trustflow"}],"title":"1. Introd\u00aduction"}],"url":"#trustflow"},
 };

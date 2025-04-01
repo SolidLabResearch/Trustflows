@@ -8,7 +8,7 @@ Editor: Beatriz Esteves, Ghent University - imec http://idlab.ugent.be/, beatriz
 Editor: Julian Rojas, Ghent University - imec http://idlab.ugent.be/, julianandres.rojasmelendez@ugent.be
 Editor: Pieter Colpaert, Ghent University - imec http://idlab.ugent.be/, pieter.colpaert@ugent.be
 Editor: Ruben Verborgh, Ghent University - imec http://idlab.ugent.be/, ruben.verborgh@ugent.be
-Abstract: <mark>TODO:</mark> one-liner trustflow
+Abstract: A Trustflow is a secure data flow that explicitly embeds trust using cryptographic methods, provenance, usage policies, etc., to ensure reliability and integrity. Unlike current web data flows, which, amongst others things, rely on implicit trust based on sender reputation or manual checks, Trustflows make trust verifiable and integral to the data itself.
 Markup Shorthands: markdown yes, css no
 Canonical URL: _ORCHESTRATOR_CURRENT_BUILD_FULL_LINK_
 Previous Version: _ORCHESTRATOR_PREVIOUS_BUILD_FULL_LINK_
@@ -37,15 +37,24 @@ Introd­uction {#introduction}
 
 <dl>
   <dt><dfn>Trustflow</dfn></dt>
-  <dd><mark>TODO:</mark></dd>
+  <dd>A Trustflow is a secure data flow that explicitly embeds trust using cryptographic methods, provenance, usage policies, etc., to ensure reliability and integrity.</dd>
 
   <dt><dfn>Trust Envelope</dfn></dt>
+  <dd><mark>TODO:</mark></dd>
+
+  <dt><dfn>Sticky Policy</dfn></dt>
   <dd><mark>TODO:</mark></dd>
 </dl>
 
 
 ## Requirements ## {#requirements}
 
+- Identity: The need to be able to trust the identity or claims of a party
+- Usage Control: The need that only authorized parties can use the data for a well-defined purpose
+- Data minimization:  The need to only disclose the minimal amount of data that other parties require for the processing
+- Separation of concerns: <mark>TODO:</mark>
+- Data Integrity: <mark>TODO:</mark>
+- Interoperability: <mark>TODO:</mark>
 
 Components {#components}
 =====================
@@ -56,7 +65,7 @@ Components {#components}
 - **Sticky policies** represent restrictions on the use of data, which are directly attached to the corresponding data (Ines: https://www.sciencedirect.com/science/article/pii/S1574013724000819) -> need for standardization language for expressing it -> context associations Ruben D
 
 
-<mark>TODO:</mark> What do we mean with that
+<mark>TODO:</mark> What do we mean with that; How does it differ from a sticky policy?
 
 
 Technologies envisioned: 
