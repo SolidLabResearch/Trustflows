@@ -176,14 +176,14 @@ Trust envelope extends sticky policies by also incorporating the following
 - semantics: what exactly is in the envelope?
     - data selection and discovery purposes?
 
+Trust envelope thus not only contains future use of the data, but also [explain history of the data](https://ruben.verborgh.org/blog/2023/11/10/no-more-raw-data/#trust-recipient)
 
+<mark>TODO: continue with elaborating of what a trust envelope is</mark>
 
 <figure id="compliance-report-model-figure">
 <img src="./img/trust-envelope.svg">
 <figcaption>Trust Envelope</figcaption>
 </figure>
-
-<mark>TODO:</mark> What do we mean with that; How does it differ from a sticky policy?
 
 
 Technologies envisioned: 
