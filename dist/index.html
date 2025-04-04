@@ -2171,7 +2171,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://knows.idlab.ugent.be/"> <img alt="KNoWS" height="48" src="logo.png"> </a> </p>
    <h1 class="p-name no-ref" id="title">Trustflows</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Document, <time class="dt-updated" datetime="2025-04-01">1 April 2025</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Living Document, <time class="dt-updated" datetime="2025-04-04">4 April 2025</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>Previous Versions:
@@ -2187,7 +2187,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" height="15" src="https://licensebuttons.net/p/zero/1.0/80x15.png" width="80"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 1 April 2025,
+In addition, as of 4 April 2025,
 the editors have made this specification available under the <a href="https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at https://www.openwebfoundation.org/the-agreements/the-owf-1-0-agreements-granted-claims/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -2247,34 +2247,51 @@ Parts of this work may be from another specification document.  If so, those par
    <h3 class="heading settled" data-level="1.2" id="requirements"><span class="secno">1.2. </span><span class="content">Requirements</span><a class="self-link" href="#requirements"></a></h3>
    <ul>
     <li data-md>
-     <p>Identity: The need to be able to trust the identity or claims of a party</p>
+     <p><strong>Identity</strong>: The need to be able to trust the identity or claims of a party</p>
     <li data-md>
-     <p>Usage Control: The need that only authorized parties can use the data for a well-defined purpose</p>
+     <p><strong>Usage Control</strong>: The need that only authorized parties can use the data for a well-defined purpose</p>
+     <ul>
+      <li data-md>
+       <p>also related to confidentiality from the CIA triad</p>
+     </ul>
     <li data-md>
-     <p>Data minimization:  The need to only disclose the minimal amount of data that other parties require for the processing</p>
+     <p><strong>Data minimization</strong>:  The need to only disclose the minimal amount of data that other parties require for the processing</p>
     <li data-md>
-     <p>Separation of concerns: <mark>TODO:</mark></p>
+     <p><strong>Separation of concerns</strong>:</p>
+     <ul>
+      <li data-md>
+       <p>Argument one: <strong>choice</strong> -> no vendor lock-in (apple ecosystem, IDP ecosystem)</p>
+      <li data-md>
+       <p>Argument two: <strong>indepent evolution</strong> -> relies on interoperabilty</p>
+     </ul>
     <li data-md>
-     <p>Data Integrity: <mark>TODO:</mark></p>
+     <p><strong>Data Integrity</strong>: Classic information security. The need for proof/verification that data has not been tampered with.</p>
     <li data-md>
-     <p>Interoperability: <mark>TODO:</mark></p>
+     <p><strong>Interoperability</strong>: The ability of computer systems or software to exchange and make use of information. (oxford definition)</p>
    </ul>
    <h2 class="heading settled" data-level="2" id="components"><span class="secno">2. </span><span class="content">Components</span><a class="self-link" href="#components"></a></h2>
    <h3 class="heading settled" data-level="2.1" id="envelope"><span class="secno">2.1. </span><span class="content">Trust Envelope</span><a class="self-link" href="#envelope"></a></h3>
+   <p>Trust envelope</p>
    <ul>
     <li data-md>
      <p><strong>Sticky policies</strong> represent restrictions on the use of data, which are directly attached to the corresponding data (Ines: https://www.sciencedirect.com/science/article/pii/S1574013724000819) -> need for standardization language for expressing it -> context associations Ruben D</p>
    </ul>
+   <figure id="compliance-report-model-figure">
+     <img src="./img/trust-envelope.svg"> 
+    <figcaption>Trust Envelope</figcaption>
+   </figure>
    <p><mark>TODO:</mark> What do we mean with that; How does it differ from a sticky policy?</p>
    <p>Technologies envisioned:</p>
    <ul>
     <li data-md>
-     <p>Reference to https://w3id.org/context-associations/specification</p>
+     <p>Reference to <a data-link-type="biblio" href="#biblio-context-associations" title="RDF Context Associations">[Context-Associations]</a></p>
    </ul>
    <h3 class="heading settled" data-level="2.2" id="policy-engine"><span class="secno">2.2. </span><span class="content">Policy Engine</span><a class="self-link" href="#policy-engine"></a></h3>
    <p><mark>TODO:</mark> What do we mean with that</p>
    <p>Technologies envisioned</p>
    <ul>
+    <li data-md>
+     <p>Reference to <a data-link-type="biblio" href="#biblio-odrl-model" title="ODRL Information Model 2.2">[odrl-model]</a></p>
     <li data-md>
      <p>Reference to <a data-link-type="biblio" href="#biblio-force" title="Framework for ODRL Rule Compliance through Evaluation">[FORCE]</a></p>
     <li data-md>
@@ -2476,8 +2493,12 @@ Parts of this work may be from another specification document.  If so, those par
   </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
+   <dt id="biblio-context-associations">[Context-Associations]
+   <dd>Ruben Dedecker; Pieter Colpaert. <a href="https://w3id.org/context-associations/specification"><cite>RDF Context Associations</cite></a>. URL: <a href="https://w3id.org/context-associations/specification">https://w3id.org/context-associations/specification</a>
    <dt id="biblio-force">[FORCE]
    <dd>Wout Slabbinck; Beatriz Esteves. <a href="https://w3id.org/force/"><cite>Framework for ODRL Rule Compliance through Evaluation</cite></a>. URL: <a href="https://w3id.org/force/">https://w3id.org/force/</a>
+   <dt id="biblio-odrl-model">[ODRL-MODEL]
+   <dd>Renato Iannella; Serena Villata. <a href="https://w3c.github.io/poe/model/"><cite>ODRL Information Model 2.2</cite></a>. URL: <a href="https://w3c.github.io/poe/model/">https://w3c.github.io/poe/model/</a>
   </dl>
 <script>/* Boilerplate: script-dom-helper */
 "use strict";

@@ -22,6 +22,14 @@ Previous Version: _ORCHESTRATOR_PREVIOUS_BUILD_FULL_LINK_
         "Wout Slabbinck",
         "Beatriz Esteves"
 		]
+    },
+"Context-Associations": {
+    "href": "https://w3id.org/context-associations/specification",
+    "title": "RDF Context Associations",
+    "authors": [
+        "Ruben Dedecker",
+        "Pieter Colpaert"
+		]
     }
 }
 </pre>
@@ -49,12 +57,15 @@ Introd­uction {#introduction}
 
 ## Requirements ## {#requirements}
 
-- Identity: The need to be able to trust the identity or claims of a party
-- Usage Control: The need that only authorized parties can use the data for a well-defined purpose
-- Data minimization:  The need to only disclose the minimal amount of data that other parties require for the processing
-- Separation of concerns: <mark>TODO:</mark>
-- Data Integrity: <mark>TODO:</mark>
-- Interoperability: <mark>TODO:</mark>
+- **Identity**: The need to be able to trust the identity or claims of a party
+- **Usage Control**: The need that only authorized parties can use the data for a well-defined purpose
+    - also related to confidentiality from the CIA triad
+- **Data minimization**:  The need to only disclose the minimal amount of data that other parties require for the processing
+- **Separation of concerns**:
+    - Argument one: **choice** -> no vendor lock-in (apple ecosystem, IDP ecosystem)
+    - Argument two: **indepent evolution** -> relies on interoperabilty
+- **Data Integrity**: Classic information security. The need for proof/verification that data has not been tampered with.
+- **Interoperability**: The ability of computer systems or software to exchange and make use of information. (oxford definition)
 
 Components {#components}
 =====================
@@ -62,14 +73,20 @@ Components {#components}
 
 ## Trust Envelope ## {#envelope}
 
+Trust envelope
+
 - **Sticky policies** represent restrictions on the use of data, which are directly attached to the corresponding data (Ines: https://www.sciencedirect.com/science/article/pii/S1574013724000819) -> need for standardization language for expressing it -> context associations Ruben D
 
+<figure id="compliance-report-model-figure">
+<img src="./img/trust-envelope.svg">
+<figcaption>Trust Envelope</figcaption>
+</figure>
 
 <mark>TODO:</mark> What do we mean with that; How does it differ from a sticky policy?
 
 
 Technologies envisioned: 
-- Reference to https://w3id.org/context-associations/specification
+- Reference to [[Context-Associations]]
 
 
 ## Policy Engine ## {#policy-engine}
@@ -77,12 +94,13 @@ Technologies envisioned:
 <mark>TODO:</mark> What do we mean with that
 
 Technologies envisioned
+- Reference to [[odrl-model]]
 - Reference to [[FORCE]]
 - Reference to SDS paper
 - Reference to XACML?
 
 
-## Credential Verifier##  {#credentials}
+## Credential Verifier ##  {#credentials}
 
 <mark>TODO:</mark> What do we mean with that
 
