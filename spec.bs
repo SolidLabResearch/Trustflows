@@ -15,21 +15,97 @@ Previous Version: _ORCHESTRATOR_PREVIOUS_BUILD_FULL_LINK_
 </pre>
 
 <pre class=biblio> 
-{"FORCE": {
-    "href": "https://w3id.org/force/",
-    "title": "Framework for ODRL Rule Compliance through Evaluation",
-    "authors": [
-        "Wout Slabbinck",
-        "Beatriz Esteves"
-		]
+{
+    "FORCE": {
+        "href": "https://w3id.org/force/",
+        "title": "Framework for ODRL Rule Compliance through Evaluation",
+        "authors": [
+            "Wout Slabbinck",
+            "Beatriz Esteves"
+        ]
     },
-"Context-Associations": {
-    "href": "https://w3id.org/context-associations/specification",
-    "title": "RDF Context Associations",
-    "authors": [
-        "Ruben Dedecker",
-        "Pieter Colpaert"
-		]
+    "Context-Associations": {
+        "href": "https://w3id.org/context-associations/specification",
+        "title": "RDF Context Associations",
+        "authors": [
+            "Ruben Dedecker",
+            "Pieter Colpaert"
+        ]
+    },
+    "OIDC": {
+        "authors": [
+            "N. Sakimura",
+            "J. Bradley",
+            "M.B. Jones",
+            "B. de Medeiros",
+            "C. Mortimore"
+        ],
+        "href": "https://openid.net/specs/openid-connect-core-1_0.html",
+        "title": "OpenID Connect Core 1.0",
+        "publisher": "The OpenID Foundation"
+    },
+    "SOLID-OIDC": {
+        "authors": [
+            "Aaron Coburn",
+            "elf Pavlik ",
+            "Dmitri Zagidulin"
+        ],
+        "href": "https://solid.github.io/solid-oidc/",
+        "title": "Solid-OIDC",
+        "publisher": "W3C"
+    },
+    "WebID": {
+        "authors": [
+            "Andrei Sambra",
+            "Henry Story",
+            "Tim Berners-Lee"
+        ],
+        "href": "https://www.w3.org/2005/Incubator/webid/spec/identity/",
+        "title": "WebID 1.0",
+        "publisher": "WebID Incubator Group"
+    },
+    "A4DS": {
+        "href": "https://spec.knows.idlab.ugent.be/A4DS/L0/latest/",
+        "title": "Authorization for Data Spaces (A4DS)",
+        "authors": [
+            "Wouter Termont"
+        ]
+    },
+    "uma-grant": {
+        "authors": [
+            "Maciej Machulak",
+            "Justin Richer",
+            "Eve Maler, Ed."
+        ],
+        "date": "7 January 2018",
+        "href": "https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-grant-2.0.html",
+        "title": "User-Managed Access (UMA) 2.0 Grant for OAuth 2.0 Authorization",
+        "status": "Recommendation",
+        "publisher": "Kantara Initiative",
+        "deliveredBy": [
+            {
+                "shortname": "User-Managed Access Work Group",
+                "url": "https://kantara.atlassian.net/wiki/spaces/uma"
+            }
+        ]
+    },
+    "uma-fed": {
+        "authors": [
+            "Maciej Machulak",
+            "Justin Richer",
+            "Eve Maler, Ed."
+        ],
+        "date": "7 January 2018",
+        "href": "https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-federated-authz-2.0.html",
+        "title": "Federated Authorization for User-Managed Access (UMA) 2.0",
+        "status": "Recommendation",
+        "publisher": "Kantara Initiative",
+        "deliveredBy": [
+            {
+                "shortname": "User-Managed Access Work Group",
+                "url": "https://kantara.atlassian.net/wiki/spaces/uma"
+            }
+        ]
     }
 }
 </pre>
@@ -63,7 +139,10 @@ Introd­uction {#introduction}
 - **Data minimization**:  The need to only disclose the minimal amount of data that other parties require for the processing
 - **Separation of concerns**:
     - Argument one: **choice** -> no vendor lock-in (apple ecosystem, IDP ecosystem)
-    - Argument two: **indepent evolution** -> relies on interoperabilty
+        - choice of IDP
+        - choice of authorization server per resource (to get an access token)
+    - Argument two: **indepent evolution** -> relies on interoperabilty and standardization (without that, it is impossible to have indepent evolution)
+    - Argument three: **knowledge**: knowledge is fragmented at different places (there is no one place with all knowledge)
 - **Data Integrity**: Classic information security. The need for proof/verification that data has not been tampered with.
 - **Interoperability**: The ability of computer systems or software to exchange and make use of information. (oxford definition)
 
@@ -75,7 +154,7 @@ Components {#components}
 
 Trust envelope
 
-- **Sticky policies** represent restrictions on the use of data, which are directly attached to the corresponding data (Ines: https://www.sciencedirect.com/science/article/pii/S1574013724000819) -> need for standardization language for expressing it -> context associations Ruben D
+- [=Sticky policy=] represent restrictions on the use of data, which are directly attached to the corresponding data (Ines: https://www.sciencedirect.com/science/article/pii/S1574013724000819) -> need for standardization language for expressing it -> context associations Ruben D
 
 <figure id="compliance-report-model-figure">
 <img src="./img/trust-envelope.svg">
@@ -94,7 +173,7 @@ Technologies envisioned:
 <mark>TODO:</mark> What do we mean with that
 
 Technologies envisioned
-- Reference to [[odrl-model]]
+- Reference to [[ODRL-MODEL]]
 - Reference to [[FORCE]]
 - Reference to SDS paper
 - Reference to XACML?
@@ -105,9 +184,9 @@ Technologies envisioned
 <mark>TODO:</mark> What do we mean with that
 
 Technologies envisioned
-- Reference to OIDC?
-- Reference to WebID and Solid-OIDC
-- Reference to DID and VC
+- Reference to [[OIDC]]
+- Reference to [[WebID]] and [[Solid-OIDC]]
+- Reference to [[DID]] and [[VC-data-model]]
 
 ## Data Minimization ## {#data-minimization}
 
@@ -117,7 +196,10 @@ Technologies envisioned
 
 Architecture {#architecture}
 =====================
-Elaborate UMA: seperation of concerns (RS + AS)
+Elaborate User-Managed Access: it tackles the seperation of concerns (RS + AS) [[uma-grant]] and [[uma-fed]]
+
+<mark>TODO:</mark> check out the [whitepaper](https://raw.githubusercontent.com/woutslabbinck/papers/main/2024/User-Managed-Access_White-paper.pdf)
+[[A4DS]]
 
 Rerefence to user managed access server?
 

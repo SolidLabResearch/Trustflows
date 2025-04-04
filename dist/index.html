@@ -2261,8 +2261,16 @@ Parts of this work may be from another specification document.  If so, those par
      <ul>
       <li data-md>
        <p>Argument one: <strong>choice</strong> -> no vendor lock-in (apple ecosystem, IDP ecosystem)</p>
+       <ul>
+        <li data-md>
+         <p>choice of IDP</p>
+        <li data-md>
+         <p>choice of authorization server per resource (to get an access token)</p>
+       </ul>
       <li data-md>
-       <p>Argument two: <strong>indepent evolution</strong> -> relies on interoperabilty</p>
+       <p>Argument two: <strong>indepent evolution</strong> -> relies on interoperabilty and standardization (without that, it is impossible to have indepent evolution)</p>
+      <li data-md>
+       <p>Argument three: <strong>knowledge</strong>: knowledge is fragmented at different places (there is no one place with all knowledge)</p>
      </ul>
     <li data-md>
      <p><strong>Data Integrity</strong>: Classic information security. The need for proof/verification that data has not been tampered with.</p>
@@ -2274,7 +2282,7 @@ Parts of this work may be from another specification document.  If so, those par
    <p>Trust envelope</p>
    <ul>
     <li data-md>
-     <p><strong>Sticky policies</strong> represent restrictions on the use of data, which are directly attached to the corresponding data (Ines: https://www.sciencedirect.com/science/article/pii/S1574013724000819) -> need for standardization language for expressing it -> context associations Ruben D</p>
+     <p><a data-link-type="dfn" href="#sticky-policy" id="ref-for-sticky-policy">Sticky policy</a> represent restrictions on the use of data, which are directly attached to the corresponding data (Ines: https://www.sciencedirect.com/science/article/pii/S1574013724000819) -> need for standardization language for expressing it -> context associations Ruben D</p>
    </ul>
    <figure id="compliance-report-model-figure">
      <img src="./img/trust-envelope.svg"> 
@@ -2291,7 +2299,7 @@ Parts of this work may be from another specification document.  If so, those par
    <p>Technologies envisioned</p>
    <ul>
     <li data-md>
-     <p>Reference to <a data-link-type="biblio" href="#biblio-odrl-model" title="ODRL Information Model 2.2">[odrl-model]</a></p>
+     <p>Reference to <a data-link-type="biblio" href="#biblio-odrl-model" title="ODRL Information Model 2.2">[ODRL-MODEL]</a></p>
     <li data-md>
      <p>Reference to <a data-link-type="biblio" href="#biblio-force" title="Framework for ODRL Rule Compliance through Evaluation">[FORCE]</a></p>
     <li data-md>
@@ -2304,11 +2312,11 @@ Parts of this work may be from another specification document.  If so, those par
    <p>Technologies envisioned</p>
    <ul>
     <li data-md>
-     <p>Reference to OIDC?</p>
+     <p>Reference to <a data-link-type="biblio" href="#biblio-oidc" title="OpenID Connect Core 1.0">[OIDC]</a></p>
     <li data-md>
-     <p>Reference to WebID and Solid-OIDC</p>
+     <p>Reference to <a data-link-type="biblio" href="#biblio-webid" title="WebID 1.0">[WebID]</a> and <a data-link-type="biblio" href="#biblio-solid-oidc" title="Solid-OIDC">[Solid-OIDC]</a></p>
     <li data-md>
-     <p>Reference to DID and VC</p>
+     <p>Reference to <a data-link-type="biblio" href="#biblio-did" title="Decentralized Identifiers (DIDs) v1.0">[DID]</a> and <a data-link-type="biblio" href="#biblio-vc-data-model" title="Verifiable Credentials Data Model v1.1">[VC-data-model]</a></p>
    </ul>
    <h3 class="heading settled" data-level="2.4" id="data-minimization"><span class="secno">2.4. </span><span class="content">Data Minimization</span><a class="self-link" href="#data-minimization"></a></h3>
    <p><mark>TODO:</mark> What do we mean with that</p>
@@ -2319,7 +2327,8 @@ Parts of this work may be from another specification document.  If so, those par
      <p>SPARQL + CSS -> Joachim paper</p>
    </ul>
    <h2 class="heading settled" data-level="3" id="architecture"><span class="secno">3. </span><span class="content">Architecture</span><a class="self-link" href="#architecture"></a></h2>
-    Elaborate UMA: seperation of concerns (RS + AS) 
+    Elaborate User-Managed Access: it tackles the seperation of concerns (RS + AS) <a data-link-type="biblio" href="#biblio-uma-grant" title="User-Managed Access (UMA) 2.0 Grant for OAuth 2.0 Authorization">[uma-grant]</a> and <a data-link-type="biblio" href="#biblio-uma-fed" title="Federated Authorization for User-Managed Access (UMA) 2.0">[uma-fed]</a> 
+   <p><mark>TODO:</mark> check out the <a href="https://raw.githubusercontent.com/woutslabbinck/papers/main/2024/User-Managed-Access_White-paper.pdf">whitepaper</a> <a data-link-type="biblio" href="#biblio-a4ds" title="Authorization for Data Spaces (A4DS)">[A4DS]</a></p>
    <p>Rerefence to user managed access server?</p>
    <h2 class="heading settled" data-level="4" id="supporting-materials"><span class="secno">4. </span><span class="content">Supporting Materials</span><a class="self-link" href="#supporting-materials"></a></h2>
    <h2 class="heading settled" data-level="5" id="namespaces"><span class="secno">5. </span><span class="content">Namespaces</span><a class="self-link" href="#namespaces"></a></h2>
@@ -2493,12 +2502,28 @@ Parts of this work may be from another specification document.  If so, those par
   </dl>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
   <dl>
+   <dt id="biblio-a4ds">[A4DS]
+   <dd>Wouter Termont. <a href="https://spec.knows.idlab.ugent.be/A4DS/L0/latest/"><cite>Authorization for Data Spaces (A4DS)</cite></a>. URL: <a href="https://spec.knows.idlab.ugent.be/A4DS/L0/latest/">https://spec.knows.idlab.ugent.be/A4DS/L0/latest/</a>
    <dt id="biblio-context-associations">[Context-Associations]
    <dd>Ruben Dedecker; Pieter Colpaert. <a href="https://w3id.org/context-associations/specification"><cite>RDF Context Associations</cite></a>. URL: <a href="https://w3id.org/context-associations/specification">https://w3id.org/context-associations/specification</a>
+   <dt id="biblio-did">[DID]
+   <dd>Manu Sporny; et al. <a href="https://w3c.github.io/did-core/"><cite>Decentralized Identifiers (DIDs) v1.0</cite></a>. URL: <a href="https://w3c.github.io/did-core/">https://w3c.github.io/did-core/</a>
    <dt id="biblio-force">[FORCE]
    <dd>Wout Slabbinck; Beatriz Esteves. <a href="https://w3id.org/force/"><cite>Framework for ODRL Rule Compliance through Evaluation</cite></a>. URL: <a href="https://w3id.org/force/">https://w3id.org/force/</a>
    <dt id="biblio-odrl-model">[ODRL-MODEL]
    <dd>Renato Iannella; Serena Villata. <a href="https://w3c.github.io/poe/model/"><cite>ODRL Information Model 2.2</cite></a>. URL: <a href="https://w3c.github.io/poe/model/">https://w3c.github.io/poe/model/</a>
+   <dt id="biblio-oidc">[OIDC]
+   <dd>N. Sakimura; et al. <a href="https://openid.net/specs/openid-connect-core-1_0.html"><cite>OpenID Connect Core 1.0</cite></a>. URL: <a href="https://openid.net/specs/openid-connect-core-1_0.html">https://openid.net/specs/openid-connect-core-1_0.html</a>
+   <dt id="biblio-solid-oidc">[Solid-OIDC]
+   <dd>Aaron Coburn; elf Pavlik; Dmitri Zagidulin. <a href="https://solid.github.io/solid-oidc/"><cite>Solid-OIDC</cite></a>. URL: <a href="https://solid.github.io/solid-oidc/">https://solid.github.io/solid-oidc/</a>
+   <dt id="biblio-uma-fed">[UMA-FED]
+   <dd>Maciej Machulak; Justin Richer; Eve Maler, Ed.. <a href="https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-federated-authz-2.0.html"><cite>Federated Authorization for User-Managed Access (UMA) 2.0</cite></a>. 7 January 2018. Recommendation. URL: <a href="https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-federated-authz-2.0.html">https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-federated-authz-2.0.html</a>
+   <dt id="biblio-uma-grant">[UMA-GRANT]
+   <dd>Maciej Machulak; Justin Richer; Eve Maler, Ed.. <a href="https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-grant-2.0.html"><cite>User-Managed Access (UMA) 2.0 Grant for OAuth 2.0 Authorization</cite></a>. 7 January 2018. Recommendation. URL: <a href="https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-grant-2.0.html">https://docs.kantarainitiative.org/uma/wg/rec-oauth-uma-grant-2.0.html</a>
+   <dt id="biblio-vc-data-model">[VC-data-model]
+   <dd>Manu Sporny; et al. <a href="https://w3c.github.io/vc-data-model/"><cite>Verifiable Credentials Data Model v1.1</cite></a>. URL: <a href="https://w3c.github.io/vc-data-model/">https://w3c.github.io/vc-data-model/</a>
+   <dt id="biblio-webid">[WebID]
+   <dd>Andrei Sambra; Henry Story; Tim Berners-Lee. <a href="https://www.w3.org/2005/Incubator/webid/spec/identity/"><cite>WebID 1.0</cite></a>. URL: <a href="https://www.w3.org/2005/Incubator/webid/spec/identity/">https://www.w3.org/2005/Incubator/webid/spec/identity/</a>
   </dl>
 <script>/* Boilerplate: script-dom-helper */
 "use strict";
@@ -2700,7 +2725,7 @@ function parseHTML(markup) {
 "use strict";
 {
 let dfnPanelData = {
-"sticky-policy": {"dfnID":"sticky-policy","dfnText":"Sticky Policy","external":false,"refSections":[],"url":"#sticky-policy"},
+"sticky-policy": {"dfnID":"sticky-policy","dfnText":"Sticky Policy","external":false,"refSections":[{"refs":[{"id":"ref-for-sticky-policy"}],"title":"2.1. Trust Envelope"}],"url":"#sticky-policy"},
 "trust-envelope": {"dfnID":"trust-envelope","dfnText":"Trust Envelope","external":false,"refSections":[{"refs":[{"id":"ref-for-trust-envelope"}],"title":"1. Introd\u00aduction"}],"url":"#trust-envelope"},
 "trustflow": {"dfnID":"trustflow","dfnText":"Trustflow","external":false,"refSections":[{"refs":[{"id":"ref-for-trustflow"}],"title":"1. Introd\u00aduction"}],"url":"#trustflow"},
 };
@@ -3091,6 +3116,7 @@ function genLinkingSyntaxes(dfn) {
 "use strict";
 {
 let refsData = {
+"#sticky-policy": {"displayText":"sticky policy","export":true,"for_":[],"level":"","normative":true,"shortname":"trustflows","spec":"trustflows","status":"local","text":"sticky policy","type":"dfn","url":"#sticky-policy"},
 "#trust-envelope": {"displayText":"trust envelope","export":true,"for_":[],"level":"","normative":true,"shortname":"trustflows","spec":"trustflows","status":"local","text":"trust envelope","type":"dfn","url":"#trust-envelope"},
 "#trustflow": {"displayText":"trustflow","export":true,"for_":[],"level":"","normative":true,"shortname":"trustflows","spec":"trustflows","status":"local","text":"trustflow","type":"dfn","url":"#trustflow"},
 };
