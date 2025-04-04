@@ -152,9 +152,31 @@ Components {#components}
 
 ## Trust Envelope ## {#envelope}
 
-Trust envelope
 
 - [=Sticky policy=] represent restrictions on the use of data, which are directly attached to the corresponding data (Ines: https://www.sciencedirect.com/science/article/pii/S1574013724000819) -> need for standardization language for expressing it -> context associations Ruben D
+    - origin: sticky policy paradigm comes from [P3P paper](https://www.researchgate.net/profile/Matthias-Schunter/publication/2543924_Platform_for_Enterprise_Privacy_Practices_Privacy-Enabled_Management_of_Customer_Data/links/0deec51b8afe6ce8c7000000/Platform-for-Enterprise-Privacy-Practices-Privacy-Enabled-Management-of-Customer-Data.pdf): **Platform for Enterprise Privacy Practices: Privacy-enabled Management of Customer Data** (2002)
+        - P3P is obsolete since 2018 ([W3C source](https://www.w3.org/TR/2018/OBSL-P3P-20180830/))
+    - suggestion of strong stickiness: Towards Accountable Management of Identity and Privacy: Sticky Policies and Enforceable Tracing Services (2003)
+    - iterated upon (worked out) in **Sticky Policies: An Approach for Managing Privacy across Multiple Parties** (2011)
+        - def 1: Machine-readable policies can stick to data to define allowed usage and obligations as it travels across multiple parties, enabling users to improve control over their personal information. The EnCoRe project has developed such a technical solution for privacy management that is suitable for use in a broad range of domains.
+        - def 2: conditions and constraints attached to data that describe how it should be treated
+    - Sticky Policies: A Survey (2019)
+        - shows renewed interest
+    - characteristics of sticky (usage control policy)
+        - purpose (use of data)
+        - constraints on subject and action
+        - deontic rules (prohibitions and opbligations)
+        - notification of disclosure and/or deletion (enforcement)
+        - trusted authorities: provide assurance and accountability in the process of granting access to the protected data,  potentially the result of a negotiation process.
+        - strong binding -> integrity check due to cryptographic means
+
+
+Trust envelope extends sticky policies by also incorporating the following
+- provenance: where does the information come from?
+- semantics: what exactly is in the envelope?
+    - data selection and discovery purposes?
+
+
 
 <figure id="compliance-report-model-figure">
 <img src="./img/trust-envelope.svg">
